@@ -12,7 +12,9 @@
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item"><a class="nav-link" href="{{ route('users.index') }}">Users</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('classes.index') }}">Classes</a></li>
-                    
+                    <li class="nav-item"><a class="nav-link" href="{{ route('bookings.index') }}">Bookings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('trainers.index') }}">Trainers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('memberships.index') }}">Memberships</a></li>
                 </ul>
             </div>
         </div>
