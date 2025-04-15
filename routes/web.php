@@ -22,6 +22,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/', function () {
+    return redirect()->route('classes.index');
+});
+
 Route::resource('users', UserController::class);
 Route::resource('trainers', TrainerController::class);
 Route::resource('classes', GymClassController::class);
