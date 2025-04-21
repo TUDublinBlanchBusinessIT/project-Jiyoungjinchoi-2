@@ -41,7 +41,7 @@
                         @endif
                     </td>
                     <td>
-                        <a href="{{ route('users.edit', $user) }}" class="btn btn-sm btn-warning">
+                        <a href="{{ route('users.edit', $user) }}" class="btn btn-sm btn-dark">
                             <i class="fa fa-edit"></i> Edit
                         </a>
                         <form action="{{ route('users.destroy', $user) }}" method="POST" class="d-inline">
