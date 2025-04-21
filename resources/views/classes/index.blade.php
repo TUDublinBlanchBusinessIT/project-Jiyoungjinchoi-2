@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="d-flex justify-content-between align-items-center mb-3">
-    <h2 class="fw-bold">Fitness Classes</h2>
+    <h1 class="mb-4 fw-bold display-5">Fitness Classes</h1>
     <a href="{{ route('classes.create') }}" class="btn btn-primary">
         <i class="fa fa-plus"></i> Add New Class
     </a>
@@ -25,7 +25,7 @@
         <tbody>
             @forelse($classes as $class)
                 <tr>
-                    <td>{{ $class->title }}</td>
+                    <td class="fw-bold">{{ $class->title }}</td>
                     <td>{{ $class->description ?? '—' }}</td> {{-- Show Description --}}
                     <td>{{ $class->trainer->name ?? '—' }}</td>
                     <td>{{ \Carbon\Carbon::parse($class->start_time)->format('d M, H:i') }}</td>
