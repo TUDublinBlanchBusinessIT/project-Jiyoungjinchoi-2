@@ -31,7 +31,7 @@
                     <td>{{ \Carbon\Carbon::parse($class->start_time)->format('d M, H:i') }}</td>
                     <td>{{ $class->capacity }}</td>
                     <td>
-                        <a href="{{ route('classes.edit', $class) }}" class="btn btn-sm btn-warning">
+                        <a href="{{ route('classes.edit', $class) }}" class="btn btn-sm btn-secondary">
                             <i class="fa fa-edit"></i> Edit
                         </a>
                         <form action="{{ route('classes.destroy', $class) }}" method="POST" class="d-inline">
