@@ -1,9 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <h1 class="mb-4 fw-bold display-5">Gym Membership</h1>
-    <a href="{{ route('memberships.create') }}" class="btn btn-primary mb-3">Add Membership</a>
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Gym Membership</h2>
+    <a href="{{ route('memberships.create') }}" class="btn btn-primary">
+        <i class="fas fa-plus"></i> Add Membership
+    </a>
+</div>
     <table class="table table-bordered">
         <thead>
             <tr><th>User</th><th>Type</th><th>Start</th><th>End</th><th>Actions</th></tr>
