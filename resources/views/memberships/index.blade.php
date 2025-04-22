@@ -16,7 +16,7 @@
                     <td>{{ $membership->start_date }}</td>
                     <td>{{ $membership->end_date }}</td>
                     <td>
-                        <a href="{{ route('memberships.edit', $membership) }}" class="btn btn-sm btn-warning">Edit</a>
+                        <a href="{{ route('memberships.edit', $membership) }}" class="btn btn-sm btn-secondary">Edit</a>
                         <form method="POST" action="{{ route('memberships.destroy', $membership) }}" style="display:inline">
                             @csrf @method('DELETE')
                             <button class="btn btn-sm btn-danger">Delete</button>
