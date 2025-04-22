@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h2>Gym Memberships</h2>
+    <h1 class="mb-4 fw-bold display-5">Gym Membership</h1>
     <a href="{{ route('memberships.create') }}" class="btn btn-primary mb-3">Add Membership</a>
     <table class="table table-bordered">
         <thead>
