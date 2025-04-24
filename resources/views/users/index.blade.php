@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="d-flex justify-content-between align-items-center mb-3">
-    <h2 class="fw-bold">All Users</h2>
+    <h1 class="mb-4 fw-bold display-5">All Users</h1>
     <a href="{{ route('users.create') }}" class="btn btn-primary">
         <i class="fa fa-plus"></i> Add New User
     </a>
@@ -41,7 +41,7 @@
                         @endif
                     </td>
                     <td>
-                        <a href="{{ route('users.edit', $user) }}" class="btn btn-sm btn-dark">
+                        <a href="{{ route('users.edit', $user) }}" class="btn btn-sm btn-secondary">
                             <i class="fa fa-edit"></i> Edit
                         </a>
                         <form action="{{ route('users.destroy', $user) }}" method="POST" class="d-inline">
