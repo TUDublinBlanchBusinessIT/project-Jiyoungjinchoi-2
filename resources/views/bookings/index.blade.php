@@ -15,7 +15,7 @@
                     <td>{{ $booking->gymClass->title }}</td>
                     <td>{{ $booking->status }}</td>
                     <td>
-                        <a href="{{ route('bookings.edit', $booking) }}" class="btn btn-sm btn-warning">Edit</a>
+                        <a href="{{ route('bookings.edit', $booking) }}" class="btn btn-sm btn-secondary">Edit</a>
                         <form method="POST" action="{{ route('bookings.destroy', $booking) }}" style="display:inline">
                             @csrf @method('DELETE')
                             <button class="btn btn-sm btn-danger">Cancel</button>
