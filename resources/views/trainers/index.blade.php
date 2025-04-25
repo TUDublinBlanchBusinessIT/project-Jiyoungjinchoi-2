@@ -1,9 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <h2>All Trainers</h2>
-    <a href="{{ route('trainers.create') }}" class="btn btn-primary mb-3">Add Trainer</a>
+<div class="d-flex justify-content-between align-items-center mb-3">
+<h1 class="mb-4 fw-bold display-5">All Trainers</h1>
+    <a href="{{ route('trainers.create') }}" class="btn btn-primary">
+        <i class="fas fa-plus"></i> Add trainer
+    </a>
+</div>
     <table class="table table-bordered">
         <thead>
             <tr><th>Name</th><th>Specialty</th><th>Phone</th><th>Actions</th></tr>
