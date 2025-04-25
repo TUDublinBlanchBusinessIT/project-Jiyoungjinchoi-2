@@ -18,7 +18,7 @@
                     <td>{{ $trainer->specialty }}</td>
                     <td>{{ $trainer->phone }}</td>
                     <td>
-                        <a href="{{ route('trainers.edit', $trainer) }}" class="btn btn-sm btn-warning">Edit</a>
+                        <a href="{{ route('trainers.edit', $trainer) }}" class="btn btn-sm btn-secondary">Edit</a>
                         <form method="POST" action="{{ route('trainers.destroy', $trainer) }}" style="display:inline">
                             @csrf @method('DELETE')
                             <button class="btn btn-sm btn-danger">Delete</button>
