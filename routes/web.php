@@ -1,21 +1,27 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TrainerController;
 use App\Http\Controllers\GymClassController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\MembershipController;
 
-Route::get('/', [HomeController::class, 'index']);
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+*/
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Main welcome page
+Route::get('/', function () {
+    return view('welcome');
+});
 
-require __DIR__.'/auth.php';
+// Directly go to Users page without login
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
 
+// Resource routes (CRUD)
 Route::resource('users', UserController::class);
 Route::resource('trainers', TrainerController::class);
 Route::resource('classes', GymClassController::class);
