@@ -49,4 +49,9 @@ class MembershipController extends Controller
         $membership->delete();
         return redirect()->route('memberships.index');
     }
+    public function show($id)
+    {
+        $membership = Membership::with('user')->findOrFail($id); // Assuming Membership has a 'user' relationship
+        return view('memberships.show', compact('membership'));
+    }
 }

@@ -41,4 +41,10 @@ class TrainerController extends Controller
         $trainer->delete();
         return redirect()->route('trainers.index');
     }
+    public function show($id)
+    {
+    $trainer = Trainer::findOrFail($id); // Assuming you have a Trainer model
+    return view('trainers.show', compact('trainer'));
+    }
+
 }

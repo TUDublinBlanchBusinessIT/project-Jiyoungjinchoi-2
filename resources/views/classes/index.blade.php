@@ -4,48 +4,40 @@
 
 @section('content')
 <div class="d-flex justify-content-between align-items-center mb-3">
-    <h1 class="mb-4 fw-bold display-5">Fitness Classes</h1>
+    <h1 class="mb-4 fw-bold display-5">All Classes</h1>
     <a href="{{ route('classes.create') }}" class="btn btn-primary">
-        <i class="fa fa-plus"></i> Add New Class
+        <i class="fas fa-plus"></i> Add New Class
     </a>
 </div>
 
-<div class="card p-3">
-    <table class="table table-hover align-middle">
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Description</th> {{-- Added --}}
-                <th>Trainer</th>
-                <th>Time</th>
-                <th>Capacity</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @forelse($classes as $class)
-                <tr>
-                    <td class="fw-bold">{{ $class->title }}</td>
-                    <td>{{ $class->description ?? '—' }}</td> {{-- Show Description --}}
-                    <td>{{ $class->trainer->name ?? '—' }}</td>
-                    <td>{{ \Carbon\Carbon::parse($class->start_time)->format('d M, H:i') }}</td>
-                    <td>{{ $class->capacity }}</td>
-                    <td>
-                        <a href="{{ route('classes.edit', $class) }}" class="btn btn-sm btn-secondary">
-                            <i class="fa fa-edit"></i> Edit
-                        </a>
-                        <form action="{{ route('classes.destroy', $class) }}" method="POST" class="d-inline">
-                            @csrf @method('DELETE')
-                            <button class="btn btn-sm btn-danger" onclick="return confirm('Delete this class?')">
-                                <i class="fa fa-trash"></i> Delete
-                            </button>
-                        </form>
-                    </td>
-                </tr>
-            @empty
-                <tr><td colspan="6" class="text-center text-muted">No classes available.</td></tr>
-            @endforelse
-        </tbody>
-    </table>
-</div>
+<!-- Table displaying classes -->
+<table class="table table-responsive">
+    <thead>
+        <tr>
+            <th style="min-width: 200px; width: 25%;">Name</th> <!-- Adjust column size -->
+            <th style="min-width: 300px; width: 40%;">Description</th> <!-- Adjust column size -->
+            <th style="min-width: 150px; width: 20%;">Trainer</th>
+            <th style="min-width: 200px; width: 15%;">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach ($classes as $class)
+    <tr>
+        <td>{{ $class->title }}</td> <!-- Update from $class->name to $class->title -->
+        <td>{{ $class->description }}</td>
+        <td>{{ $class->trainer->name ?? 'No Trainer Assigned' }}</td>
+        <td>
+            <a href="{{ route('classes.show', $class->id) }}" class="btn btn-success btn-sm">Show</a>
+            <a href="{{ route('classes.edit', $class->id) }}" class="btn btn-warning btn-sm">Edit</a>
+            <form action="{{ route('classes.destroy', $class->id) }}" method="POST" style="display:inline;">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this class?')">Delete</button>
+            </form>
+        </td>
+    </tr>
+@endforeach
+
+    </tbody>
+</table>
 @endsection

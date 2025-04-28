@@ -50,4 +50,10 @@ class BookingController extends Controller
         $booking->delete();
         return redirect()->route('bookings.index');
     }
+    public function show($id)
+    {
+    $booking = Booking::with('user', 'gymClass')->findOrFail($id); // Assuming your Booking model has relationships with User and GymClass
+    return view('bookings.show', compact('booking'));
+    }
+
 }

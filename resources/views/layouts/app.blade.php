@@ -12,11 +12,72 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
-        body { background: #f4f6f8; font-family: 'Segoe UI', sans-serif; }
-        .navbar { background-color: #1f2937; }
-        .navbar-brand, .nav-link, .nav-link:hover { color: #fff !important; }
-        .card { border: none; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        .table th { background-color: #f8f9fa; }
+        body { 
+            background: #f4f6f8; 
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* Navbar styles */
+        .navbar { 
+            background-color: #1f2937; 
+        }
+
+        .navbar-brand, .nav-link, .nav-link:hover { 
+            color: #fff !important; 
+        }
+
+        .navbar-toggler-icon {
+            background-color: #fff; 
+        }
+
+        /* Card and table styles */
+        .card { 
+            border: none; 
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+        }
+
+        .table th { 
+            background-color: #f8f9fa; 
+        }
+
+        /* Button colors */
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-info {
+            background-color: #17a2b8;
+            border-color: #17a2b8;
+        }
+
+        .btn-warning {
+            background-color: #ffc107;
+            border-color: #ffc107;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+
+        /* Responsive styling */
+        .container {
+            margin-top: 20px;
+        }
+
+        /* Table responsive */
+        @media (max-width: 768px) {
+            .navbar-collapse {
+                background-color: #1f2937;
+                padding: 10px;
+            }
+
+            .table th, .table td {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
     </style>
 </head>
 
@@ -25,7 +86,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">FitFlex</a>
+            <a class="navbar-brand fw-bold" href="{{ route('dashboard') }}">FitFlex</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>

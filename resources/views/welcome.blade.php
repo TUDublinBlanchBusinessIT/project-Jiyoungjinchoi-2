@@ -11,7 +11,7 @@
         <img src="{{ asset('storage/FitFlexLogo.JPG') }}" alt="FitFlex Logo" style="width: 600px; height: auto; margin-bottom: 50px;">
         <h1 class="mb-4">Welcome to FitFlex</h1>
         <a href="{{ route('users.index') }}">
-            <button class="btn btn-primary">Log In</button>
+            <button class="btn btn-primary">View Users</button>
         </a>
 
     </div>
