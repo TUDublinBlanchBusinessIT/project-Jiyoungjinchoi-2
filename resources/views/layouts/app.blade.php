@@ -13,7 +13,7 @@
 
     <style>
         body { 
-            background: #f4f6f8; 
+            background:  #adb5bd; 
             font-family: 'Segoe UI', sans-serif;
         }
 
@@ -37,27 +37,28 @@
         }
 
         .table th { 
-            background-color: #f8f9fa; 
+            background-color: #dee2e6; 
         }
+        
 
         /* Button colors */
         .btn-primary {
-            background-color: #007bff;
+            background-color: #00008B;
             border-color: #007bff;
         }
 
         .btn-info {
-            background-color: #17a2b8;
-            border-color: #17a2b8;
+            background-color: #006400;
+            border-color: #20c997;
         }
 
         .btn-warning {
-            background-color: #ffc107;
+            background-color: #B8860B;
             border-color: #ffc107;
         }
 
         .btn-danger {
-            background-color: #dc3545;
+            background-color: #800000;
             border-color: #dc3545;
         }
 
